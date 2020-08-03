@@ -43,12 +43,14 @@ console.log('');
   }
 
 dataDefine(5);
-console.log( ' ');
+console.log(' ');
 dataDefine('hello');
-console.log( ' ');
+console.log(' ');
 dataDefine(true);
-console.log( ' ');
+console.log(' ');
 dataDefine(null);
+console.log(' ');                     
+dataDefine(NaN);
 
 
 console.log( ' ');

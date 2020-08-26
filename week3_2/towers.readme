@@ -1,0 +1,66 @@
+This is my read me for my towers of hanoi application.
+
+In towers of Hanoi Im given a variable called stack that is set
+to an object with the keys (a, b, c) and the key values in a are
+an array set to [4, 3, 2, 1].
+
+The goal of the game is to get the key values in (a) to be in the
+ same order but in either key (b, or c). The rules of the game are
+ that no bigger number can sit on top of (or in the case come)
+ in a later order than a smaller number.
+        for example
+        stacks = {
+            a:[]
+            b:[3,4]
+            c:[1,2]
+        } // this is not allowed becaue in key (b) the array has allowed
+            // 4 to come after 3. but key (c) the order works fine
+-------------------------------------------------------------------
+So given my variable stacks the first task i set to accomplish is 
+a function called movePiece with the parameters 
+(startStack, endStack)allowed. I create a variable called A1 to
+ hold the value of stacks[startStack].pop().  
+        //later in the program the terminal asked for input for 
+        //startStack and endStack.
+What this does is takes the input and applies the method pop()
+to the key:value pair of stacks[whatever the startStack input is]
+    stacks[startStack].pop() will take and return the end number of 
+    whichever key is called.
+
+After that i write a simular instruction for stacks[endStack]
+but i use push() and set our A1 variable inside of the push method
+    stacks[endStack].push(A1) will then "push" the product of
+    A1 and apply at the end of the endStack input key.
+
+-------------------------------------------------------------------
+The next function i start to work on is buildig the isLegal that 
+also allow the use of parameters (startStack, endStack)
+
+first i create 2 variable to hold the values for stacks[startStack]
+and starts[endStack] seperately called el1 and el2
+
+then i write a if statement that first checks if the the value of
+your startStack key minus 1 (mimicing the effect of our pop() method)
+from before) is greater than 0.
+    I did this to set the rule that you cannot take out of a empty
+    key
+While also checking to make sure the length of the endStack key is
+equal to 0 so you can move items to blank keys.
+
+then in a else if statement i set el1 < el2 to make sure our first
+value entered with always by smaller than the value we are adding
+to
+
+what i intended to do with was write rules that allow you to put 
+on blank keys but not take away from blank keys. and then also check
+the size of the startStack and endStack key.
+--------------------------------------------------------------------
+then the function that checks for a win called checkForWin()
+
+in a if statement as long as either stack (b) or (c) length are
+exactly the same as 4 then console log "you win!" and return true.
+--------------------------------------------------------------------
+last in the function that runs the game towersOfHanoi with the
+parameters(startStack, endStack) i create a if statement that checks if 
+ the function isLegal(startStack,endStack) is true and if so executes the
+ movePiece(startStack,endStack) function allowing you to play the game. 

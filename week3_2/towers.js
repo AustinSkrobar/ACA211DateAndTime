@@ -83,6 +83,7 @@ const isLegal = (startStack, endStack) => {
 const checkForWin = () => {
   // Your code here
   if (stacks.b.length === 4 || stacks.c.length === 4) {
+    console.log("You win!")
     return true;
   } else {
     return false;

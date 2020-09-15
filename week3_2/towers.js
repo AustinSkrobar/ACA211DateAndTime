@@ -40,6 +40,7 @@ const printStacks = () => {
 
 // then .push it to the user input for endStack
 const movePiece = (startStack, endStack) => {
+  
   let A1 = stacks[startStack].pop(); // will this work instead of how I wrote the rest?
   stacks[endStack].push(A1); // this as well
   //let A1 = stacks[A].pop()     this is how i originally wrote it.
@@ -59,19 +60,30 @@ const isLegal = (startStack, endStack) => {
   // } else {
   //   return true;
   // }
-  //thisset a variable that takes the length of the key:value for the key the user puts as startStacks and then subtracts that length by 1
-  let el1 = stacks[startStack];
+  //this set a variable that takes the length of the key:value for the key the user puts as startStacks and then subtracts that length by 1
+  let startArray = stacks[startStack];
   // and then we have another variable that equals the whole key:value of endStack for user input
-  let el2 = stacks[endStack];
+  let endArray = stacks[endStack];
+
 
   //then check if el1 is greater than 0, basically not take away from a empty key
   // and also check if the length of el2(the endStack) is equal to 0
-  if ([el1.length - 1] > 0 && el2.length == 0) {
+  if (startStack == endStack){
+    return false
+  }
+  if(startArray == undefined || endArray == undefined){
+      return false // this checks to make sure start array isnt empty
+  }
+  if([startArray.length - 1] > 0 && endArray.length == 0){
     return true;
-  } else if (el1 < el2) {  //then see if el1 is smaller than el2
+  }
+
+  let pieceToMove = startArray[startArray.length-1];
+  let tipOfEnd = endArray[endArray.length-1];
+  if (pieceToMove < tipOfEnd){
     return true;
   } else {
-    return false;         
+    return false
   }
 };
 
